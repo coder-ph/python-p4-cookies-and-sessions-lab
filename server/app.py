@@ -37,7 +37,7 @@ def show_article(id):
     session['page_views'] = session.get('page_views', 0) +1
     if session['page_views']>3:
         return make_response({
-            'message': 'maximum pageview reached'
+            'message': 'maximum pageview limit reached'
         }, 401)
         
     return make_response(article.to_dict(), 200)
